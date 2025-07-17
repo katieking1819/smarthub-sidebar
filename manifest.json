@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Jira Sidebar",
+  "version": "1.0",
+  "description": "Displays links from Jira stories in a sidebar",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["*://*.atlassian.net/*"],
+  "action": {
+    "default_title": "Jira Sidebar"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.atlassian.net/*"],
+      "js": ["content.js"],
+      "css": ["sidebar.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
